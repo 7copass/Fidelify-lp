@@ -19,16 +19,16 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
+          <div className="flex-shrink-0 cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
             <Logo />
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
+              <a
+                key={link.name}
+                href={link.href}
                 className="text-sm font-medium text-slate-600 hover:text-navy transition-colors"
               >
                 {link.name}
@@ -39,13 +39,13 @@ const Navbar: React.FC = () => {
           {/* CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <a href="#" className="text-sm font-medium text-slate-600 hover:text-navy">Login</a>
-            <Button size="sm" variant="primary">Teste Grátis</Button>
+            <Button size="sm" variant="primary">Conhecer Planos</Button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
+            <button
+              onClick={() => setIsOpen(!isOpen)}
               className="text-slate-600 hover:text-navy focus:outline-none"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -65,9 +65,9 @@ const Navbar: React.FC = () => {
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
               {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
+                <a
+                  key={link.name}
+                  href={link.href}
                   className="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-navy hover:bg-slate-50"
                   onClick={() => setIsOpen(false)}
                 >
@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
                 </a>
               ))}
               <div className="pt-4 border-t border-slate-100 mt-4">
-                <Button fullWidth variant="primary" onClick={() => setIsOpen(false)}>Começar Teste Grátis</Button>
+                <Button fullWidth variant="primary" onClick={() => setIsOpen(false)}>Conhecer Planos</Button>
                 <div className="mt-3 text-center">
                   <a href="#" className="text-sm font-medium text-slate-500">Já sou cliente</a>
                 </div>

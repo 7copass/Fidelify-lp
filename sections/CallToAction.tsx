@@ -9,16 +9,16 @@ const CallToAction: React.FC = () => {
           Comece a fidelizar hoje mesmo
         </h2>
         <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-          7 dias grátis. Sem cartão de crédito. Cancele quando quiser.
+          Escolha o plano ideal para o seu negócio e comece a fidelizar seus clientes.
         </p>
-        
+
         <div className="flex flex-col items-center">
-          <Button 
+          <Button
             className="bg-gold hover:bg-amber-500 text-white text-lg h-14 px-10 shadow-lg shadow-gold/20"
           >
-            Começar meu teste grátis
+            Ver Planos
           </Button>
-          
+
           <p className="mt-6 text-sm text-slate-400">
             Junte-se a <span className="text-white font-bold">+100 lojistas</span> que já estão faturando mais
           </p>
