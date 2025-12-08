@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
 
           {/* CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="#" className="text-sm font-medium text-slate-600 hover:text-navy">Login</a>
+            <a href="https://app.fidelify.com.br" className="text-sm font-medium text-slate-600 hover:text-navy">Login</a>
             <Button size="sm" variant="primary">Conhecer Planos</Button>
           </div>
 
