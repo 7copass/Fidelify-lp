@@ -6,6 +6,7 @@ import SocialProof from './sections/SocialProof';
 import PainPoints from './sections/PainPoints';
 import HowItWorks from './sections/HowItWorks';
 import Features from './sections/Features';
+import ROICalculator from './sections/ROICalculator';
 import Testimonials from './sections/Testimonials';
 import Pricing from './sections/Pricing';
 import FAQ from './sections/FAQ';
@@ -23,6 +24,7 @@ const HomePage = () => (
       <PainPoints />
       <HowItWorks />
       <Features />
+      <ROICalculator />
       <Testimonials />
       <Pricing />
       <FAQ />
