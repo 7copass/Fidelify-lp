@@ -2,9 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '../components/ui/Button';
 import DashboardMockup from '../components/DashboardMockup';
-import { CheckCircle, PlayCircle } from 'lucide-react';
+import { CheckCircle, PlayCircle, Calendar } from 'lucide-react';
+import { useScheduleMeeting } from '../contexts/ScheduleMeetingContext';
 
 const Hero: React.FC = () => {
+  const { openModal } = useScheduleMeeting();
+
   return (
     <section className="relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden bg-white">
       {/* Background Grid Pattern */}
@@ -34,8 +37,9 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
-              <Button size="lg" className="w-full sm:w-auto shadow-xl shadow-blue-900/10">
-                Conhecer Planos
+              <Button size="lg" className="w-full sm:w-auto shadow-xl shadow-blue-900/10 gap-2" onClick={openModal}>
+                <Calendar size={20} />
+                Agendar uma Reunião
               </Button>
               <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2">
                 <PlayCircle size={20} />

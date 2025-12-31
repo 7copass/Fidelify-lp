@@ -13,6 +13,9 @@ import FAQ from './sections/FAQ';
 import CallToAction from './sections/CallToAction';
 import Footer from './sections/Footer';
 import TermosDeServico from './sections/TermosDeServico';
+import ThankYou from './sections/ThankYou';
+import { ScheduleMeetingProvider } from './contexts/ScheduleMeetingContext';
+import ScheduleMeetingModal from './components/ScheduleMeetingModal';
 
 // Componente da página principal (landing page)
 const HomePage = () => (
@@ -31,17 +34,21 @@ const HomePage = () => (
       <CallToAction />
     </main>
     <Footer />
+    <ScheduleMeetingModal />
   </div>
 );
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/termos-de-servico" element={<TermosDeServico />} />
-      </Routes>
-    </Router>
+    <ScheduleMeetingProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/termos-de-servico" element={<TermosDeServico />} />
+          <Route path="/obrigado" element={<ThankYou />} />
+        </Routes>
+      </Router>
+    </ScheduleMeetingProvider>
   );
 }
 
