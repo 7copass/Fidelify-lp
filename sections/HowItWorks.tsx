@@ -19,7 +19,7 @@ const HowItWorks: React.FC = () => {
     {
       id: 3,
       title: "Retorno garantido",
-      desc: "Para usar o saldo, o cliente precisa voltar e gastar pelo menos 2x o valor do cashback. Você garante a margem.",
+      desc: "Para resgatar o saldo, você define as regras: valor mínimo de compra, prazo de validade e muito mais. Controle total nas suas mãos.",
       icon: Repeat
     }
   ];
