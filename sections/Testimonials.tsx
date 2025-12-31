@@ -13,7 +13,7 @@ const Testimonials: React.FC = () => {
       initials: "JS"
     },
     {
-      quote: "Meus clientes adoram receber o SMS com o saldo. Eles voltam muito mais rápido para gastar o bônus. Recomendo demais!",
+      quote: "Meus clientes adoram receber a notificação com o saldo. Eles voltam muito mais rápido para gastar o bônus. Recomendo demais!",
       author: "Maria Santos",
       role: "Farmácia Saúde",
       initials: "MS"
@@ -48,11 +48,11 @@ const Testimonials: React.FC = () => {
                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 h-full flex flex-col justify-between">
                   <div>
                     <div className="flex gap-1 mb-4">
-                      {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 text-gold fill-gold" />)}
+                      {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-4 h-4 text-gold fill-gold" />)}
                     </div>
                     <p className="text-slate-600 mb-6 italic">"{t.quote}"</p>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full bg-navy text-white flex items-center justify-center font-bold text-sm">
                       {t.initials}

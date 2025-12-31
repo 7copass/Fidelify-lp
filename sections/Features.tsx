@@ -12,7 +12,7 @@ const Features: React.FC = () => {
     {
       icon: MessageSquare,
       title: "Notificações Automáticas",
-      desc: "Envio de E-mail e SMS sem intervenção manual para lembrar o cliente de voltar."
+      desc: "Envio de E-mail e WhatsApp sem intervenção manual para lembrar o cliente de voltar."
     },
     {
       icon: BarChart3,

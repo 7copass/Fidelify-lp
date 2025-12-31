@@ -13,7 +13,7 @@ const HowItWorks: React.FC = () => {
     {
       id: 2,
       title: "Notificação automática",
-      desc: "Seu cliente recebe um SMS ou WhatsApp na hora avisando quanto ganhou de saldo para a próxima compra.",
+      desc: "Seu cliente recebe uma notificação via WhatsApp na hora avisando quanto ganhou de saldo para a próxima compra.",
       icon: BellRing
     },
     {
@@ -42,7 +42,7 @@ const HowItWorks: React.FC = () => {
 
           <div className="space-y-12">
             {steps.map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={step.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -57,10 +57,10 @@ const HowItWorks: React.FC = () => {
 
                 {/* Content Side */}
                 <div className="ml-12 md:ml-0 md:w-1/2 pl-0 md:px-12 text-left md:text-right">
-                   <div className={`${index % 2 !== 0 ? 'md:text-left' : 'md:text-right'}`}>
-                      <h3 className="text-xl font-bold text-navy mb-2">{step.title}</h3>
-                      <p className="text-slate-600">{step.desc}</p>
-                   </div>
+                  <div className={`${index % 2 !== 0 ? 'md:text-left' : 'md:text-right'}`}>
+                    <h3 className="text-xl font-bold text-navy mb-2">{step.title}</h3>
+                    <p className="text-slate-600">{step.desc}</p>
+                  </div>
                 </div>
 
                 {/* Visual Side */}
