@@ -10,6 +10,7 @@ interface FormData {
     empresa: string;
     quantidadeLojas: string;
     segmento: string;
+    consentimento: boolean;
 }
 
 interface FormErrors {
@@ -19,6 +20,7 @@ interface FormErrors {
     empresa?: string;
     quantidadeLojas?: string;
     segmento?: string;
+    consentimento?: string;
 }
 
 const SEGMENTOS = [
@@ -61,7 +63,8 @@ const ScheduleMeetingModal: React.FC = () => {
         telefone: '',
         empresa: '',
         quantidadeLojas: '',
-        segmento: ''
+        segmento: '',
+        consentimento: false
     });
     const [errors, setErrors] = useState<FormErrors>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -121,6 +124,7 @@ const ScheduleMeetingModal: React.FC = () => {
         if (!formData.empresa.trim()) newErrors.empresa = 'Nome da empresa é obrigatório';
         if (!formData.quantidadeLojas) newErrors.quantidadeLojas = 'Selecione a quantidade de lojas';
         if (!formData.segmento) newErrors.segmento = 'Selecione o segmento';
+        if (!formData.consentimento) newErrors.consentimento = 'Você deve concordar para continuar';
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -160,7 +164,8 @@ const ScheduleMeetingModal: React.FC = () => {
                     telefone: '',
                     empresa: '',
                     quantidadeLojas: '',
-                    segmento: ''
+                    segmento: '',
+                    consentimento: false
                 });
                 closeModal();
                 // Redirect to thank you page
@@ -371,12 +376,37 @@ const ScheduleMeetingModal: React.FC = () => {
                                 )}
                             </motion.button>
 
-                            {/* Privacy Note */}
-                            <p className="text-xs text-slate-400 text-center mt-4">
-                                Ao preencher este formulário, você concorda com nossa{' '}
-                                <a href="/termos-de-servico" className="text-gold hover:underline">
-                                    política de privacidade
-                                </a>.
+                            {/* Consent Checkbox */}
+                            <div className="mt-4">
+                                <label className="flex items-start gap-3 cursor-pointer group">
+                                    <input
+                                        type="checkbox"
+                                        name="consentimento"
+                                        checked={formData.consentimento}
+                                        onChange={(e) => {
+                                            setFormData(prev => ({ ...prev, consentimento: e.target.checked }));
+                                            if (errors.consentimento) {
+                                                setErrors(prev => ({ ...prev, consentimento: undefined }));
+                                            }
+                                        }}
+                                        className="mt-0.5 w-4 h-4 rounded border-2 border-slate-300 text-gold focus:ring-gold focus:ring-offset-0 cursor-pointer"
+                                    />
+                                    <span className="text-xs text-slate-600 leading-relaxed">
+                                        Concordo em receber comunicações do Fidelify via WhatsApp, e-mail e outros meios digitais, incluindo informações sobre cashback, campanhas, cupons e benefícios, conforme a{' '}
+                                        <a href="/politica-de-privacidade" className="text-gold hover:underline font-medium" target="_blank" rel="noopener noreferrer">
+                                            Política de Privacidade
+                                        </a>.
+                                    </span>
+                                </label>
+                                {errors.consentimento && <p className="text-red-500 text-xs mt-1 ml-7">{errors.consentimento}</p>}
+                            </div>
+
+                            {/* Legal Footer Text */}
+                            <p className="text-[11px] text-slate-400 text-center mt-4 leading-relaxed">
+                                Ao enviar este formulário, você autoriza o Fidelify a entrar em contato por WhatsApp, e-mail e outros meios digitais, conforme nossa{' '}
+                                <a href="/politica-de-privacidade" className="text-gold hover:underline">
+                                    Política de Privacidade
+                                </a>. Você poderá cancelar a qualquer momento.
                             </p>
                         </form>
                     </motion.div>

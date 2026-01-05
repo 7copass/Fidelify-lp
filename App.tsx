@@ -13,6 +13,9 @@ import FAQ from './sections/FAQ';
 import CallToAction from './sections/CallToAction';
 import Footer from './sections/Footer';
 import TermosDeServico from './sections/TermosDeServico';
+import PoliticaDePrivacidade from './sections/PoliticaDePrivacidade';
+import ExclusaoDeDados from './sections/ExclusaoDeDados';
+import RetornoExclusaoDados from './sections/RetornoExclusaoDados';
 import ThankYou from './sections/ThankYou';
 import { ScheduleMeetingProvider } from './contexts/ScheduleMeetingContext';
 import ScheduleMeetingModal from './components/ScheduleMeetingModal';
@@ -45,6 +48,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/termos-de-servico" element={<TermosDeServico />} />
+          <Route path="/politica-de-privacidade" element={<PoliticaDePrivacidade />} />
+          <Route path="/exclusao-de-dados" element={<ExclusaoDeDados />} />
+          <Route path="/retorno-exclusao-dados" element={<RetornoExclusaoDados />} />
           <Route path="/obrigado" element={<ThankYou />} />
         </Routes>
       </Router>
