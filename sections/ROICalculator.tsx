@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { Calculator, TrendingDown, TrendingUp, ArrowRight, Calendar } from 'lucide-react';
-import { useScheduleMeeting } from '../contexts/ScheduleMeetingContext';
 
 const ROICalculator: React.FC = () => {
-    const { openModal } = useScheduleMeeting();
-
     // Estados dos sliders
     const [faturamento, setFaturamento] = useState(50000);
     const [taxaRetornoAtual, setTaxaRetornoAtual] = useState(15);
@@ -223,16 +220,17 @@ const ROICalculator: React.FC = () => {
                         Você poderia faturar <span className="text-gold">+{formatCurrency(ganhoAnual)}</span> por ano com a Fidelify
                     </p>
                     <p className="text-slate-300 text-sm mb-6">
-                        Agende uma demonstração gratuita e descubra o plano ideal para o seu negócio
+                        Descubra o plano ideal para o seu negócio e comece hoje mesmo
                     </p>
-                    <button
-                        onClick={openModal}
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-gold hover:bg-amber-500 text-white font-semibold rounded-xl transition-colors"
-                    >
-                        <Calendar size={20} />
-                        Agendar Demonstração Gratuita
-                        <ArrowRight size={18} />
-                    </button>
+                    <a href="#pricing">
+                        <button
+                            className="inline-flex items-center gap-2 px-8 py-4 bg-gold hover:bg-amber-500 text-white font-semibold rounded-xl transition-colors"
+                        >
+                            <Calendar size={20} />
+                            Ver Planos
+                            <ArrowRight size={18} />
+                        </button>
+                    </a>
                 </div>
             </div>
 

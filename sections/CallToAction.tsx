@@ -1,11 +1,8 @@
 import React from 'react';
 import { Calendar, MessageCircle } from 'lucide-react';
 import Button from '../components/ui/Button';
-import { useScheduleMeeting } from '../contexts/ScheduleMeetingContext';
 
 const CallToAction: React.FC = () => {
-  const { openModal } = useScheduleMeeting();
-
   const whatsappNumber = '5591981617148';
   const whatsappMessage = encodeURIComponent('Olá! Vim pelo site e gostaria de saber mais sobre o Fidelify.');
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
@@ -22,13 +19,14 @@ const CallToAction: React.FC = () => {
 
         <div className="flex flex-col items-center">
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button
-              className="bg-gold hover:bg-amber-500 text-white text-lg h-14 px-10 shadow-lg shadow-gold/20 gap-2"
-              onClick={openModal}
-            >
-              <Calendar size={20} />
-              Agendar uma Reunião
-            </Button>
+            <a href="#pricing">
+              <Button
+                className="bg-gold hover:bg-amber-500 text-white text-lg h-14 px-10 shadow-lg shadow-gold/20 gap-2 w-full sm:w-auto"
+              >
+                <Calendar size={20} />
+                Ver Planos
+              </Button>
+            </a>
 
             <a
               href={whatsappLink}

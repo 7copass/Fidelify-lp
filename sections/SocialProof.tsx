@@ -15,21 +15,23 @@ const SocialProof: React.FC = () => {
           <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider text-center md:text-left">
             Confiado por varejistas em todo o Brasil
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-             {/* Fake Logos using Icons and Text */}
-             <div className="flex items-center gap-2 text-slate-600 font-bold text-lg">
-                <Store className="text-navy"/> MercadoEx
-             </div>
-             <div className="flex items-center gap-2 text-slate-600 font-bold text-lg">
-                <Pill className="text-navy"/> FarmaVida
-             </div>
-             <div className="flex items-center gap-2 text-slate-600 font-bold text-lg">
-                <Coffee className="text-navy"/> CaféCentral
-             </div>
-             <div className="flex items-center gap-2 text-slate-600 font-bold text-lg">
-                <ShoppingBag className="text-navy"/> ModasBoutique
-             </div>
+            {/* Fake Logos using Icons and Text */}
+            <div className="flex items-center gap-2 text-slate-600 font-bold text-lg">
+              <Store className="text-navy" /> MercadoEx
+            </div>
+            <div className="flex items-center gap-2 text-slate-600 font-bold text-lg">
+              <Pill className="text-navy" /> FarmaVida
+            </div>
+            <div className="flex items-center gap-2 text-slate-600 font-bold text-lg">
+              <Coffee className="text-navy" /> CaféCentral
+            </div>
+            <div className="flex items-center gap-2 text-slate-600 font-bold text-lg">
+              <ShoppingBag className="text-navy" /> ModasBoutique
+            </div>
+            <img src="/katu-logo.jpg" alt="Katu" className="h-8 w-auto object-contain mix-blend-multiply" />
+            <img src="/tukan-logo.jpg" alt="Tukan" className="h-8 w-auto object-contain rounded" />
           </div>
         </div>
       </div>

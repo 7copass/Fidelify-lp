@@ -3,11 +3,9 @@ import { Logo } from '../components/Logo';
 import Button from '../components/ui/Button';
 import { Menu, X, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useScheduleMeeting } from '../contexts/ScheduleMeetingContext';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { openModal } = useScheduleMeeting();
 
   const navLinks = [
     { name: 'Como funciona', href: '#how-it-works' },
@@ -15,11 +13,6 @@ const Navbar: React.FC = () => {
     { name: 'Planos', href: '#pricing' },
     { name: 'FAQ', href: '#faq' },
   ];
-
-  const handleOpenModal = () => {
-    setIsOpen(false);
-    openModal();
-  };
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-100">
@@ -46,10 +39,12 @@ const Navbar: React.FC = () => {
           {/* CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <a href="https://app.fidelify.com.br" className="text-sm font-medium text-slate-600 hover:text-navy">Login</a>
-            <Button size="sm" variant="primary" onClick={openModal} className="gap-2">
-              <Calendar size={16} />
-              Agendar Demonstração
-            </Button>
+            <a href="#pricing">
+              <Button size="sm" variant="primary" className="gap-2">
+                <Calendar size={16} />
+                Ver Planos
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -85,10 +80,12 @@ const Navbar: React.FC = () => {
                 </a>
               ))}
               <div className="pt-4 border-t border-slate-100 mt-4">
-                <Button fullWidth variant="primary" onClick={handleOpenModal} className="gap-2">
-                  <Calendar size={16} />
-                  Agendar Demonstração
-                </Button>
+                <a href="#pricing" onClick={() => setIsOpen(false)} className="w-full flex">
+                  <Button fullWidth variant="primary" className="gap-2 w-full">
+                    <Calendar size={16} />
+                    Ver Planos
+                  </Button>
+                </a>
                 <div className="mt-3 text-center">
                   <a href="https://app.fidelify.com.br" className="text-sm font-medium text-slate-500">Já sou cliente</a>
                 </div>
